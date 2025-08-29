@@ -15,7 +15,7 @@ public class BasePage {
         driver = wd;
     }
     public void clickWait(WebElement element, int time){
-        new WebDriverWait(driver, Duration.ofSeconds(5)).
+        new WebDriverWait(driver, Duration.ofSeconds(10)).
                 until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
@@ -35,6 +35,9 @@ public class BasePage {
             return false;
         }
     }
-
+public boolean validateUrl(String fraction){
+        return new WebDriverWait(driver,Duration.ofSeconds(10))
+                .until(ExpectedConditions.urlContains(fraction));
+}
 
 }
