@@ -1,5 +1,6 @@
 package tests;
 
+import data_providers.BoardDP;
 import dto.Board;
 import dto.User;
 import manager.AppManager;
@@ -20,7 +21,15 @@ public class BoardTests  extends AppManager {
 
     @Test
     public void createNewBoardPositiveTest(){
-        Board board = Board.builder().boardTitle("09876").build();
+        Board board = Board.builder().boardTitle("11242").build();
         new BoardsPage(getDriver()).createNewBoard(board);
+    }
+
+
+
+    @Test(dataProvider = "dataProviderBoards",dataProviderClass = BoardDP.class)
+    public void createNewBoardPositiveTest_FromDP(Board board){
+        new BoardsPage(getDriver()).createNewBoard(board);
+
     }
 }
