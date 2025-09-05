@@ -32,6 +32,7 @@ public class DeleteBoardsTests extends AppManager {
     @Test
     public void deleteBoardPositiveTest() {
         myBoardPage.deleteBoard();
+
     }
 
 }

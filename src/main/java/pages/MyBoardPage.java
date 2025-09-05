@@ -19,7 +19,7 @@ public class MyBoardPage  extends BasePage{
     WebElement btnDots;
     @FindBy(xpath = "//ul/li[last()]/button")
     WebElement btnCloseBoard;
-    @FindBy(xpath = "//button[data-testid='popover-close-board-confirm']")
+    @FindBy(xpath = "//button[@data-testid='popover-close-board-confirm']")
     WebElement btnCloseBoardConfirm;
     @FindBy(xpath = "//button[@data-testid='close-board-delete-board-button']")
     WebElement btnDeleteBoard;
@@ -32,7 +32,6 @@ public class MyBoardPage  extends BasePage{
     }
 
     public void deleteBoard(){
-        pause(5);
         btnDots.click();
         pause(5);
         btnCloseBoard.click();
