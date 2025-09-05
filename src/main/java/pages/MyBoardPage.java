@@ -32,12 +32,17 @@ public class MyBoardPage  extends BasePage{
     }
 
     public void deleteBoard(){
-        clickWait(btnDots,5);
-        clickWait(btnCloseBoard,5);
-        clickWait(btnCloseBoardConfirm,5);
         pause(5);
         btnDots.click();
-        clickWait(btnDeleteBoard,5);
-        clickWait(btnDeleteBoardConfirm,5);
+        pause(5);
+        btnCloseBoard.click();
+        pause(5);
+        btnCloseBoardConfirm.click();
+        pause(5);
+        btnDots.click();
+        pause(5);
+        btnDeleteBoard.click();
+        pause(5);
+        btnDeleteBoardConfirm.click();
     }
 }
