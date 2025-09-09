@@ -7,27 +7,26 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class LoginPage extends BasePage{
-    public LoginPage(WebDriver driver){
+public class LoginPage extends BasePage {
+    public LoginPage(WebDriver driver) {
         setDriver(driver);
         PageFactory.initElements(new AjaxElementLocatorFactory
-                (driver,10),this);
+                (driver, 10), this);
     }
-@FindBy(id="email")
+
+    @FindBy(id = "email")
     WebElement inputEmail;
-    @FindBy(id="signup-submit")
+    @FindBy(id = "signup-submit")
     WebElement btnSingUp;
-    @FindBy(id="login-submit")
+    @FindBy(id = "login-submit")
     WebElement btnLoginSubmit;
-@FindBy(xpath ="//input[@placeholder='Enter password']" )
-WebElement inputPassword;
-@FindBy(id="login-submit")
-WebElement btnLogIn;
+    @FindBy(xpath = "//input[@placeholder='Enter password']")
+    WebElement inputPassword;
+    @FindBy(id = "login-submit")
+    WebElement btnLogIn;
 
 
-
-
-    public void login(User user){
+    public void login(User user) {
         inputEmail.sendKeys(user.getEmail());
         btnSingUp.click();
         btnLoginSubmit.click();
